@@ -1,0 +1,37 @@
+label {
+  display: block;
+  margin-top: 10px;
+  color: #87ceeb; /* Bleu ciel pour le texte */
+}
+
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #e0f7fa; /* Bleu ciel très clair pour le fond */
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  border-radius: 8px; /* Bordures arrondies */
+  box-shadow: 0px 4px 6px rgba(135, 206, 235, 0.4); /* Ombre bleue subtile */
+  border: 1px solid #87ceeb; /* Légère bordure bleu ciel */
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 50%; /* Image ronde */
+  border: 3px solid #4682b4; /* Bleu acier pour le contour de l'image */
+}
+
+.card-container.card:hover {
+  background-color: #b0e0e6; /* Bleu poudre au survol */
+}
+
+.card label {
+  color: #4682b4; /* Bleu acier pour les labels */
+}
