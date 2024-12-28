@@ -98,12 +98,19 @@ services:
 - Jest & Testing Library
   
 Le frontend est construit avec React pour fournir une interface utilisateur réactive et moderne. Il communique avec le backend via des API sécurisées par JWT.
+## Backend
 
-# Local setup
+### Technologies Utilisées
+- Spring Boot 2.7.0
+- Spring Security 
+- Spring Data JPA
+- Spring Web
+- JWT (JSON Web Tokens) 
+- Spring Boot
+- MySQL
+# Structure du Projet Backend
+Le backend est structuré de manière claire et modulaire, en exploitant les fonctionnalités de Spring Boot pour construire une application sécurisée, robuste et évolutive.
 
-Step 1: Download or clone the source code from GitHub to a local machine
-
-# Backend
 
 Step 2:  ```mvn clean install```
 
