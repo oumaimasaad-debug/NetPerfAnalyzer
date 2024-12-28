@@ -69,7 +69,7 @@ const NetworkTest = () => {
         performanceData: metrics
       };
 
-      const response = await axios.post('http://192.168.22.56:8080/api/network-metrics/save',data);
+      const response = await axios.post('http://localhost:8080/api/network-metrics/save',data);
       console.log(response.data);
       alert('Les métriques ont été sauvegardées avec succès.');
     } catch (error) {
@@ -86,7 +86,7 @@ const NetworkTest = () => {
     setError('');
     setIsTesting(true);
 
-    const newLatencySocket = new WebSocket("ws://192.168.0.167:8080/ws/latency");
+    const newLatencySocket = new WebSocket("ws://localhost:8080/ws/latency");
 
     newLatencySocket.onopen = () => {
       console.log('WebSocket de latence connecté');
@@ -140,7 +140,7 @@ const NetworkTest = () => {
 
     setError("");
     setIsTesting(true);
-    const newSocket = new WebSocket("ws://192.168.22.56:8080/ws/bandwidth");
+    const newSocket = new WebSocket("ws://localhost:8080/ws/bandwidth");
     setSocket(newSocket);
 
     let totalDataReceived = 0;

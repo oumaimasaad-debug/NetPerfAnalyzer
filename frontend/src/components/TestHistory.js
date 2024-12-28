@@ -16,7 +16,7 @@ const TestHistory = () => {
             username: username
           };
       try {
-            const response = await axios.get('http://192.168.0.167:8080/api/network-metrics/history', {
+            const response = await axios.get('http://localhost:8080/api/network-metrics/history', {
                 params: { username: username }
               });
         console.log("Nom d'utilisateur actuel :", username);

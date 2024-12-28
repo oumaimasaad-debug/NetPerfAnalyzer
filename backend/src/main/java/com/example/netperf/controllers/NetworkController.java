@@ -199,7 +199,7 @@ public class NetworkController {
             }
 
             if (!foundLatency) {
-                System.out.println("La sortie du ping ne contient pas de latence.");
+                latency=0;
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
