@@ -1,4 +1,4 @@
-# NETPERFANALYZER: Network Performance Analyzer
+# NetPerfAnalyzer: Network Performance Analyzer
 C'est est une plateforme complète pour tester et analyser la performance réseau. Ce projet utilise React pour le frontend, Maven et Spring Boot pour le backend, et une base de données MySQL dédiée appelée netperf.
 # Table des Matières
 - [Architecture Logicielle](#architecture-logicielle)
