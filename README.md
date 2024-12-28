@@ -5,9 +5,9 @@ C'est est une plateforme complète pour tester et analyser la performance résea
 - [Docker Image](#Docker-Image)
 - [Frontend](#frontend)
 - [Backend](#backend)
-- [Getting Started](#getting-started)
-- [Video Demonstration](#Video-Demonstration)
-- [Contributing](#contributing)
+- [Configuration locale et exécution de l'application](#Configuration-locale-et-exécution-de-l'application)
+- [ Démonstration Vidéo](#Démonstration-Vidéo)
+- [Contributeurs](#contributeurs)
 # Architecture Logicielle
 ![Spring Boot React](https://1.bp.blogspot.com/-IZ0RDJSbTmI/X4rfXCU9XdI/AAAAAAAAAj4/SPOQCM4MZkML4SF7fTTz7WfmD0mnKS6JACLcBGAsYHQ/s824/springboot_react.png)
 
