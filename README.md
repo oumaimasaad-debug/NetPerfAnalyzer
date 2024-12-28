@@ -1,7 +1,103 @@
-# springboot-reactjs-jwt-authentication
+# NETPERFANALYZER: Network Performance Analyzer
+C'est est une plateforme complète pour tester et analyser la performance réseau. Ce projet utilise React pour le frontend, Maven et Spring Boot pour le backend, et une base de données MySQL dédiée appelée netperf.
+# Table des Matières
+- [Architecture Logicielle](#architecture-logicielle)
+- [Docker Image](#Docker-Image)
+- [Frontend](#frontend)
+- [Backend](#backend)
+- [Getting Started](#getting-started)
+- [Video Demonstration](#Video-Demonstration)
+- [Contributing](#contributing)
+# Architecture Logicielle
+![Spring Boot React](https://1.bp.blogspot.com/-IZ0RDJSbTmI/X4rfXCU9XdI/AAAAAAAAAj4/SPOQCM4MZkML4SF7fTTz7WfmD0mnKS6JACLcBGAsYHQ/s824/springboot_react.png)
 
-# ReactJS - SpringBoot - JWT - Flow
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA_3alUZ-p4HwX25XcR3TTL5O5SYmiSllUzyVm-SHbVLVawBgLR_CU0qGL-5fbhtVH09FuE1H10-Dl4Kbm_4Q3rrWdzQxhd8CZ02C0t-jcgS1fPtOVldMPS9I45tsi5-ugGnfiWomID2T3ZEEKOGYYsT6y8-7EddeipLz-MPq2enomfVwGXn5VY4rm0Q/s831/arch.drawio.png">
+
+Le projet utilise React pour le frontend et Spring Boot pour le backend. La communication entre les deux se fait via des API REST sécurisées avec JWT
+
+## Docker Image
+```sh
+
+
+
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: netperf
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=root --execute 'SHOW DATABASES;'"
+      interval: 5s
+      timeout: 2s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/netperf?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: true
+      KNF_APP_JWT_EXPIRATION_MS: 76300000
+      KNF_APP_JWT_SECRET: knowledgeFactory
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=root --password=root --execute 'SHOW DATABASES;'"
+      interval: 5s
+      timeout: 2s
+      retries: 10
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend-container
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_started
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root  # Définir un mot de passe pour phpMyAdmin
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql
+
+
+```
+## Frontend
+
+### Technologies Utilisées
+
+- React
+- Redux 
+- React Router
+- Bootstrap
+- Chart.js
+- Axios
+- jsPDF
+- html2canvas
+- Jest & Testing Library
+  
+Le frontend est construit avec React pour fournir une interface utilisateur réactive et moderne. Il communique avec le backend via des API sécurisées par JWT.
 
 # Local setup
 
