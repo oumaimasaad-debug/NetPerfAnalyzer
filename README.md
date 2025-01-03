@@ -169,11 +169,15 @@ XAMPP :
 # Accédez au frontend en visitant http://localhost:3000 dans votre navigateur.
 
 # Démonstration Vidéo
-https://github.com/user-attachments/assets/22f0e78d-e1ec-4a61-bdcc-e60c3bd34359
+https://github.com/user-attachments/assets/484b6ade-512a-4c6b-bf89-61795ed969b6
 # Contributeurs
 - El Kak Basma ([GitHub]())
 - Saad Oumaima ([GitHub](https://github.com/oumaimasaad-debug))
 - Mohamed Lachgar ([Researchgate](https://www.researchgate.net/profile/Mohamed-Lachgar))
+
+
+
+
 
 
 
